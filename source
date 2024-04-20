@@ -1,0 +1,26 @@
+from math import comb
+import math
+
+def binomial_probability(n, k, p):
+    """
+    Calculate the probability of k successes in n trials with success probability p.
+
+    Parameters:
+    n (int): Number of trials
+    k (int): Number of successes
+    p (float): Probability of success on a single trial
+
+    Returns:
+    float: Probability of exactly k successes in n trials
+    """
+    # Calculate the probability of exactly k successes
+    probability = comb(n, k) * (p ** k) * ((1 - p) ** (n - k))
+    return probability
+
+# Example usage:
+n = 5  # Number of trials
+k = 5   # Desired number of successes
+p = 0.5 # Probability of success per trial
+
+result = binomial_probability(n, k, p)
+print(f"For {k} of {n}, the answer is: {result:.12f}") #change this for the number of decimels
